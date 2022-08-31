@@ -7,12 +7,6 @@
 Download TGN (https://github.com/twitter-research/tgn) and TADDY (https://github.com/yixinliu233/TADDY_pytorch) repositories in the same folder.
 Rename them in 'TGN' and 'TADDY'.
 
-### New folders
-
-Add the following folders to the previous repositories:
- - For TADDY:
-   - 'for_TGN' in 'data'.
-
 ### Files to replace
 
 Replace the following files by those provided in the present repository:
