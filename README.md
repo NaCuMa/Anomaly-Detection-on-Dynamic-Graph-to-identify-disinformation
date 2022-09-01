@@ -28,7 +28,7 @@ Add the following files:
 - For TGN:
    - 'TGN_TADDY.ipynb';
    - 'TGN_test.ipynb';
-   - 'Explainability_module.ipynb';
+   - 'Reliability_module.ipynb';
    - 'Synthetic_dataset.ipynb'.
  - For TADDY:
    - 'data\raw\email-dnc.csv';
