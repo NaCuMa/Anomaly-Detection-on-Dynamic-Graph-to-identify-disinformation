@@ -42,12 +42,12 @@ def anomaly_generation(ini_graph_percent, anomaly_percent, data, n, m, seed = 1,
         fake_edges = np.array([x for x in generate_edges if labels[x[0] - 1] != labels[x[1] - 1]])
     else: # Modification pour introduire des anomalies extérieures
         # On commence par charger les anomalies enregistrées via "Synthetic dataset" (src, dst, t)
-        fake_edges = pd.read_csv('C:/Users/geode/TADDY/data/for_TGN/TGN_anom_edges.csv', sep=',').to_numpy()
+        fake_edges = pd.read_csv('../TADDY/data/for_TGN/TGN_anom_edges.csv', sep=',').to_numpy()
         anom_times = fake_edges.T[2]
         fake_edges = fake_edges[:,0:2]
         fake_edges_mem = fake_edges.copy()
         # On modifie les indices des noeuds conformément au pré-traitement de TADDY
-        vertexs = pd.read_csv('C:/Users/geode/TADDY/data/for_TGN/TGN_vertexs.csv', sep=',').to_numpy()
+        vertexs = pd.read_csv('../TADDY/data/for_TGN/TGN_vertexs.csv', sep=',').to_numpy()
         for i in range(fake_edges.shape[0]):
             fake_edges[i][0] = np.where(vertexs == fake_edges[i][0])[0][0]
             fake_edges[i][1] = np.where(vertexs == fake_edges[i][1])[0][0]
@@ -59,14 +59,14 @@ def anomaly_generation(ini_graph_percent, anomaly_percent, data, n, m, seed = 1,
     else: # on sélectionne les anomalies à conserver et on détermine les indices auxquels les insérer pour conserver
           # l'ordre temporel
         anom_times = anom_times[fake_times]
-        Path('C:/Users/geode/TADDY/data/for_TGN/').mkdir(parents=True, exist_ok=True)
+        Path('../TADDY/data/for_TGN/').mkdir(parents=True, exist_ok=True)
         pd.DataFrame(np.hstack((vertexs[fake_edges_mem[fake_times]].reshape(len(anom_times), 2),
-                    anom_times.reshape(len(anom_times),1)))).to_csv(f'C:/Users/geode/TADDY/data/for_TGN/TGN_anom_edges_treated.csv',
+                    anom_times.reshape(len(anom_times),1)))).to_csv(f'../TADDY/data/for_TGN/TGN_anom_edges_treated.csv',
                     index=False)
 
         anomaly_num = fake_edges.shape[0]
         anomalies = fake_edges[0:anomaly_num, :]
-        times = pd.read_csv('C:/Users/geode/TADDY/data/for_TGN/TGN_times.csv', sep=',').to_numpy().T[0]
+        times = pd.read_csv('../TADDY/data/for_TGN/TGN_times.csv', sep=',').to_numpy().T[0]
         idx = np.searchsorted(times, anom_times)
         cpt = 0
         print(idx-len(train))
