@@ -31,3 +31,12 @@ If you want to try another benchmark dataset, three cells need to be updated :
  - In Anomaly detection\ To do: choice of the dataset, you need to specify the chosen dataset with the aforementionned format.
 
 If you want to test the method with the Synthetic dataset, you need to decomment the cells allowing its generation in Prepare dataset\Synthetic, the training of TGN on  it in TGN training\To do: for synthetic datasets and to use 'Synthetic' as dataset name everywhere.
+
+## Last training instant for benchmark datasets
+
+ - uci: 2946672.0
+ - digg:
+ - email: 82975888.0
+ - btc_alpha: 57711600.0
+ - btc_otc: 70837287.36343002
+ - AST:
