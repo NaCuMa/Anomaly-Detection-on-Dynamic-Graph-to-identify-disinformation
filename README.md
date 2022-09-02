@@ -41,13 +41,14 @@ Add the following files:
 - For a benchmark dataset: run the TGN\TGN_TADDY notebook, choose a dataset on the second cell and execute all. Get the last training instant, printed by the last cell.
 - For a synthetic dataset: run the Synthetic_dataset notebook, choose parameters on the second cell and execute all.
 
-Preprocess data according to https://github.com/twitter-research/tgn, e.g.: python utils/preprocess_data.py --data uci_TADDY_005_nop
+Preprocess data according to https://github.com/twitter-research/tgn. To do so, run the following command in the TGN repository:
+python utils/preprocess_data.py --data btc_alpha_TADDY_005_nop
 
 ### TGN training
 
 Proceed as explained in https://github.com/twitter-research/tgn and, in the case of benchmark dataset, indicate the final time of training, obtained at the previous step e.g.:
-- Benchmark dataset: python train_self_supervised.py -d uci_TADDY_005_nop --use_memory --prefix tgn-attn --val_time 2946672.0
-- Synthetic: python train_self_supervised.py -d synthetic --use_memory --prefix tgn-attn
+- Benchmark dataset (in TGN): python train_self_supervised.py -d btc_alpha_TADDY_005_nop --use_memory --prefix tgn-attn --val_time 57711600.0
+- Synthetic (in TGN): python train_self_supervised.py -d synthetic --use_memory --prefix tgn-attn
 
 ### Anomaly detection
 
