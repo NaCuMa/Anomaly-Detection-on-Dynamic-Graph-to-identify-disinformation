@@ -38,7 +38,7 @@ Add the following files:
 
 ### Prepare data
 
-- For a benchmark dataset: run the TGN_TADDY notebook, choose a dataset on the second cell and execute all. Get the last training instant, printed by the last cell.
+- For a benchmark dataset: run the TGN\TGN_TADDY notebook, choose a dataset on the second cell and execute all. Get the last training instant, printed by the last cell.
 - For a synthetic dataset: run the Synthetic_dataset notebook, choose parameters on the second cell and execute all.
 
 Preprocess data according to https://github.com/twitter-research/tgn, e.g.: python utils/preprocess_data.py --data uci_TADDY_005_nop
