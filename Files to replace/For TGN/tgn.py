@@ -3,7 +3,7 @@ import numpy as np
 import torch
 from collections import defaultdict
 
-from utils.utils import MergeLayer, MergeLayerDot
+from utils.utils import MergeLayer
 from modules.memory import Memory
 from modules.message_aggregator import get_message_aggregator
 from modules.message_function import get_message_function
@@ -97,7 +97,6 @@ class TGN(torch.nn.Module):
     self.affinity_score = MergeLayer(self.n_node_features, self.n_node_features,
                                      self.n_node_features,
                                      1)
-    #self.affinity_score = MergeLayerDot()
     
   def compute_temporal_embeddings(self, source_nodes, destination_nodes, negative_nodes, edge_times,
                                   edge_idxs, n_neighbors=20):
